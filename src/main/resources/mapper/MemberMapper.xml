@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.skcc.nxm.repository.MemberMapper">
+
+    <insert id="save" >
+        <selectKey keyProperty="mbrId" resultType="long" order="BEFORE">
+            SELECT NVL(MAX(mbr_id+1),1) FROM member
+        </selectKey>
+        insert into member ( mbr_id,mbr_nm, mbr_sts, mob_no, reg_dt , upd_dt)
+        values ( #{mbrId}, #{mbrNm}, #{mbrSts}, #{mobNo}, sysdate, sysdate )
+    </insert>
+
+    <select id="findById" resultType="Member">
+        select mbr_id,mbr_nm, mbr_sts, mob_no
+        from member
+        where mbr_id = #{mbrId}
+    </select>
+
+    <select id="findAll" resultType="Member">
+        select mbr_id,mbr_nm, mbr_sts, mob_no
+        from member
+        <where>
+            <if test="mbrNm != null and mbrNm != ''">
+                and mbr_nm like concat('%', #{mbrNm}, '%')
+            </if>
+        </where>
+    </select>
+
+</mapper>

@@ -1,4 +1,4 @@
-package com.skcc.nxcus_dev;
+package com.skcc.nxm;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

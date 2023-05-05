@@ -1,4 +1,4 @@
-package com.skcc.nxcus_dev;
+package com.skcc.nxm;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

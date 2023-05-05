@@ -1,0 +1,18 @@
+#oracle database
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:XE
+    username: pp87821
+    password: 1234
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+
+#mybatis
+mybatis:
+  type-aliases-package: com.skcc.nxm.domain
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: mapper/*.xml
+
+logging:
+  level:
+    com.skcc.nxm.repository: trace
