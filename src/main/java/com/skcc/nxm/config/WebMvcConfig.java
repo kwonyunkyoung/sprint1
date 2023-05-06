@@ -12,20 +12,23 @@ import java.util.Arrays;
 
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
-    /*
-     interceptor 변수선언
 
+    /*
+    # interceptor 변수선언
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         WebMvcConfigurer.super.addInterceptors(registry);
     }
+    */
 
+
+    /*
+    # 정적리소스 위치지정
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        WebMvcConfigurer.super.addResourceHandlers(registry);
+        registry.addResourceHandler("/members/**").addResourceLocations("classpath:/META-INF/");
     }
      */
-
 
 
     @Bean
