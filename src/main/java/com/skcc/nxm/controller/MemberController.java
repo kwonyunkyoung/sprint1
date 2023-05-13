@@ -3,6 +3,8 @@ package com.skcc.nxm.controller;
 
 import com.skcc.nxm.domain.Member;
 import com.skcc.nxm.service.MemberService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +17,7 @@ public class MemberController {
 
 
     private final MemberService memberService;
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     public MemberController(MemberService memberService) {
         this.memberService = memberService;
@@ -22,6 +25,11 @@ public class MemberController {
 
     @GetMapping("/sample1")
     public @ResponseBody String sample1(@RequestParam String mbrNm ) {
+        logger.trace("trace Log");
+        logger.debug("debug Log");
+        logger.info("info Log");
+        logger.warn("warn Log");
+        logger.error("error Log");
         return mbrNm;
     }
 
