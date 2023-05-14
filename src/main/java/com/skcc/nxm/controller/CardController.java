@@ -1,13 +1,9 @@
 package com.skcc.nxm.controller;
 
 
-import com.skcc.nxm.domain.Member;
-import com.skcc.nxm.service.MemberService;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @Controller
 @RequestMapping("/cards")
@@ -15,7 +11,24 @@ public class CardController {
 
     @GetMapping("/sample1")
     public @ResponseBody String sample1() {
+       try {
+           Thread.sleep(3000);
+       }catch (InterruptedException e) {
+           e.printStackTrace();
+       };
+
         return "card test";
+    }
+
+    @GetMapping("/sample2")
+    public @ResponseBody String sample2() throws Exception{
+        try {
+            throw new Exception("card error");
+        }catch (InterruptedException e) {
+            e.printStackTrace();
+        };
+
+        return "card exception test";
     }
 
 

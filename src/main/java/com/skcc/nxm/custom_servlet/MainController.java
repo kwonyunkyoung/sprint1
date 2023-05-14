@@ -16,7 +16,7 @@ public class MainController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        response.getWriter().print("MainController do get");
+        response.getWriter().print("MainController do get!!");
     }
 
     @Override

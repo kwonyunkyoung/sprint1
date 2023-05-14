@@ -1,5 +1,6 @@
 package com.skcc.nxm.fillter;
 
+import com.skcc.nxm.service.MemberService;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.servlet.*;
@@ -9,6 +10,8 @@ import java.io.IOException;
 
 @Slf4j
 public class NxcusFilter implements Filter {
+
+
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -23,6 +26,7 @@ public class NxcusFilter implements Filter {
         HttpServletResponse res = (HttpServletResponse) servletResponse;
 
         log.info("##### filter - before #####");
+
         filterChain.doFilter(req, res);
         log.info("##### filter - after #####");
     }
